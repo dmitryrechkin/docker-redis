@@ -38,15 +38,15 @@ The `Dockerfile` ensures the Redis configuration directory exists and uses the `
 
 1. Create a new Dokku Redis app:
 
-    ```bash
-    dokku apps:create redis-app
-    ```
+```bash
+dokku apps:create redis-app
+```
 
 2. Push your Dokku Redis app:
 
-    ```bash
-    git push dokku main
-    ```
+```bash
+git push dokku main
+```
 
 ### Step 5: Set Environment Variables
 
@@ -80,21 +80,21 @@ To persist Redis data, you can mount a storage volume:
 
 1. Create a directory on your Dokku host for Redis data:
 
-    ```bash
-    sudo mkdir -p /var/lib/dokku/data/storage/redis-app
-    ```
+```bash
+sudo mkdir -p /var/lib/dokku/data/storage/redis-app
+```
 
 2. Mount the storage directory to your Dokku app:
 
-    ```bash
-    dokku storage:mount redis-app /var/lib/dokku/data/storage/redis-app:/data
-    ```
+```bash
+dokku storage:mount redis-app /var/lib/dokku/data/storage/redis-app:/data
+```
 
 3. Restart the Redis app to apply the storage settings:
 
-    ```bash
-    dokku ps:restart redis-app
-    ```
+```bash
+dokku ps:restart redis-app
+```
 
 ### Step 9: Verify Deployment
 
